@@ -17,6 +17,11 @@
     --white-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .2);
 }
+.dark-mode{
+    --bg-color: #0b061f;
+    --text-color: #fdfdfd;
+    --shadow-color: rgba(0, 0, 0, .7);
+}
 
 html{
     font-size: 62.5%;
@@ -175,7 +180,26 @@ section{
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center; 
+    animation: professionRotate 13s ease-out infinite; 
+}
+
+@keyframes professionRotate{
+    0%,20%{
+        transform: rotate(0deg);
+    }
+    25%,45%{
+        transform: rotate(-90deg);
+    }
+    50%,70%{
+        transform: rotate(-180deg);
+    }
+    75%,95%{
+        transform: rotate(-270deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
 }
 
 .home .profession-box .profession{
@@ -725,7 +749,7 @@ span{
         padding: 5rem 0;
     }
     .testimonial-content ,.testimonial-slide{
-        padding: 3rem 2rem;
+        padding: 3rem .1rem;
     }
     .testimonial-box .swiper-button-next,
     .testimonial-box .swiper-button-prev{
@@ -736,13 +760,13 @@ span{
 
 @media (max-width: 450px){
     html{
-        font-size: 50%;
+        font-size: 45%;
     }
     #darkMode{
         right: 6rem;
     }
     .home{
-        padding: 1rem;
+        padding-top: 5rem;
     }
     .home .profession-box .profession:nth-child(1){
         transform: rotate(-90deg) translate(-110px, -220px);
@@ -756,13 +780,19 @@ span{
     .home .profession-box .profession:nth-child(4){
         transform: rotate(180deg) translate(-210px, -335px);
     }
+    .portfolio .portfolio-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
     .contact form .input-box input{
         width: 100%;
     }
 }
 @media (max-width: 365px){
+    html{
+        font-size: 30%;
+    }
     .home{
-        padding-bottom: 2rem;
+        padding-top: 2rem;
     }
     .about-img img{
         width: 90vw;

@@ -1,3 +1,22 @@
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $database = "portfolio";
+
+    //creation de connection
+    $connection = new mysqli($servername, $username, $password, $database);
+
+    //verification de la connection
+    if ($connection->connect_error){
+        die("connection failed: ". $connection->connect_error);}
+        else{
+            echo "congrat";
+        }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

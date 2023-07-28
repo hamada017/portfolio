@@ -7,12 +7,40 @@
    $text = $_POST['text'];
 
    //connexion au base de donnee
-   $conn = new mysqli('localhost','root','test');
+   $conn = new mysqli('localhost','root','root', 'portfolio');
    if($conn->connect_error){
     die('Connection Failed : '.$conn->connect_error);
    }else{
     
    }
+
+
+   if (isset($_POST['submit'])) {
+    //code...
+$name=$_POST['name'];
+$email=$_POST['email'];
+$phone=$_POST['phone'];
+$text=$_POST['text'];
+$address=$_POST['address'];
+
+//  echo $name;
+//  echo $address;
+//  echo $email;
+//  echo $phone;
+
+$sql="insert into ant (Name,Email,Phone,text,Address) values ('$name', '$email', '$phone', '$text', '$address')";
+$result=mysqli_query($connection,$sql);
+if($result){
+echo "connecté";
+}else{
+echo "echec";
+}
+   };
+
+
+
+
+
 ?>
 
 
